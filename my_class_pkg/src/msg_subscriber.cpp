@@ -1,0 +1,38 @@
+#include <memory>
+#include "rclcpp/rclcpp.hpp"               
+#include "my_class_pkg/msg/my_message.hpp"
+using std::placeholders::_1;
+
+class SubscriberNode : public rclcpp::Node
+{
+    public:
+        SubscriberNode()
+        : Node("my_message_subscriber")        // ROS2节点父类初始化
+        {
+            subscription_ = this->create_subscription<my_class_pkg::msg::MyMessage>(       
+                "my_msg_topic", 10, std::bind(&SubscriberNode::topic_callback, this, _1));   // 创建订阅者对象（消息类型、话题名、订阅者回调函数、队列长度）
+        }
+
+    private:
+        void topic_callback(const my_class_pkg::msg::MyMessage::SharedPtr msg) const                  // 创建回调函数，执行收到话题消息后对数据的处理
+        {
+            RCLCPP_INFO(this->get_logger(), "Received: key=%d, value='%s'", msg->key, msg->value.c_str());       // 输出日志信息，提示订阅收到的话题消息
+        }
+        
+        rclcpp::Subscription<my_class_pkg::msg::MyMessage>::SharedPtr subscription_;         // 订阅者指针
+};
+
+// ROS2节点主入口main函数
+int main(int argc, char * argv[])                         
+{
+    // ROS2 C++接口初始化
+    rclcpp::init(argc, argv);                 
+    
+    // 创建ROS2节点对象并进行初始化            
+    rclcpp::spin(std::make_shared<SubscriberNode>());     
+    
+    // 关闭ROS2 C++接口
+    rclcpp::shutdown();                                  
+    
+    return 0;
+}
