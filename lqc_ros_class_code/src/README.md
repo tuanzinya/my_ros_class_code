@@ -1,9 +1,14 @@
 # 实验一：底盘驱动与里程计
-## 开环控制
+## 轮式里程计
 rosrun move_forward move_forward_node
-## 里程计闭环控制
-
-## 碰撞、imu
+## 碰撞传感器
+rosrun sensor_pkg bump_avoid_node
+## tof传感器
+rosrun sensor_pkg tof_avoid_node
+## imu实现自旋180°
+rosrun sensor_pkg imu_spin_node
+## odom实现正方形轨迹
+rosrun odom_forward odom_forward_node
 
 # 实验四：仿真功能实现
 ## Gazobo仿真
