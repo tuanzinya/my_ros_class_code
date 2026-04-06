@@ -1,0 +1,15 @@
+<launch>
+   <include file="$(find gazebo_ros)/launch/empty_world.launch">
+     <arg name="paused" value="false"/>
+     <arg name="use_sim_time" value="true"/>
+     <arg name="gui" value="true"/>
+   </include>
+  
+  <!-- <param name="robot_description" textfile="$(find lqc_robot_description)/urdf/simple_robot.urdf" /> -->
+  <!-- <param name="robot_description" command="xacro $(find lqc_robot_description)/urdf/simple_robot.xacro"/> -->
+  <param name="robot_description" command="xacro $(find lqc_robot_description)/xacro/main.xacro"/>
+
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" 
+        args="-param robot_description -urdf -model two_wheel_robot -x 0 -y 0 -z 0.1" />
+        
+</launch>

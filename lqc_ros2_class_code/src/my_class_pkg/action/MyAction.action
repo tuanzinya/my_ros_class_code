@@ -1,0 +1,8 @@
+string object_name
+#定义目标
+---
+bool success
+#定义结果
+---
+float32 progress
+#定义反馈消息
