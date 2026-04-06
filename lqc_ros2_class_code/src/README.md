@@ -13,8 +13,16 @@ ros2 run my_class_pkg my_service_client
 ros2 run my_class_pkg my_action_server
 
 ros2 run my_class_pkg my_action_client
-# 实验三：ros日志工具
-### Python实现
+# 实验三：
+### ros2参数的设置与应用
+##### Python实现
+ros2 run my_param_pkg dynamic_param.py 
+##### C++实现
+ros2 run my_param_pkg ros_param
+##### Python实现动态控制小乌龟速度(double)
+ros2 run my_param_pkg turtle_dynamic_speed.py 
+### ros日志工具
+##### Python实现
 ros2 run my_tools_pkg ros_log.py
-### C++实现
+##### C++实现
 ros2 run my_tools_pkg ros_log
