@@ -9,14 +9,14 @@ rosrun sensor_pkg tof_avoid_node
 rosrun sensor_pkg imu_spin_node
 ## odom实现正方形轨迹
 rosrun odom_forward odom_forward_node
-
+<br>
 # 实验四：仿真功能实现
 ## Gazobo仿真
 #### 模型文件在xacro目录下，chassis实现底盘，wheels实现轮胎，main是调用其他xacro文件
 roslaunch lqc_robot_description gazebo.launch
 ## rviz仿真
 roslaunch lqc_robot_description display.launch
-
+<br>
 # 实验五
 ## 一、深度相机驱动实验
 rosrun visual_indetity get_ros_image.py
@@ -28,5 +28,5 @@ rosrun visual_indetity gesture_movement.py
 ## 四、视觉跟踪实验
 rosrun visual_indetity apriltag_follow.py
 ## 五、视觉抓取实验
-roslaunch upros_arm recognize_apriltag.launch
+roslaunch upros_arm recognize_apriltag.launch <br>
 rosrun visual_indetity tag_grab_node
