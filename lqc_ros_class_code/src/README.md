@@ -21,7 +21,7 @@ roslaunch lqc_robot_description display.launch
 ## 一、深度相机驱动实验
 rosrun visual_indetity get_ros_image.py
 ## 二、基于颜色识别的自主巡线实验
-rosrun visual_indetity follow_line.py
+rosrun visual_indetity follow_line.py \n
 rostopic pub -1 /enable_move std_msgs/Int16 "data: 1"
 ## 三、基于手势识别的机器人控制实验
 rosrun visual_indetity gesture_movement.py
