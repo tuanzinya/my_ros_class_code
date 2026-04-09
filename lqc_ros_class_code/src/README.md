@@ -16,3 +16,17 @@ rosrun odom_forward odom_forward_node
 roslaunch lqc_robot_description gazebo.launch
 ## rviz仿真
 roslaunch lqc_robot_description display.launch
+
+# 实验五
+## 一、深度相机驱动实验
+rosrun visual_indetity get_ros_image.py
+## 二、基于颜色识别的自主巡线实验
+rosrun visual_indetity follow_line.py
+rostopic pub -1 /enable_move std_msgs/Int16 "data: 1"
+## 三、基于手势识别的机器人控制实验
+rosrun visual_indetity gesture_movement.py
+## 四、视觉跟踪实验
+rosrun visual_indetity apriltag_follow.py
+## 五、视觉抓取实验
+roslaunch upros_arm recognize_apriltag.launch
+rosrun visual_indetity tag_grab_node
