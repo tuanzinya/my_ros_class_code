@@ -1,0 +1,19 @@
+<launch>
+
+  <!-- ===== 1. 机器人驱动层 ===== -->
+  <include file="$(find upros_bringup)/launch/bringup_w2a.launch" />
+
+  <!-- ===== 2. 导航系统 ===== -->
+  <include file="$(find upros_navigation)/launch/navigation.launch" />
+  <include file="$(find upros_navigation)/launch/view_nav.launch" />
+
+  <!-- ===== 3. 视觉识别 ===== -->
+  <include file="$(find upros_arm)/launch/recognize_apriltag.launch" />
+
+  <!-- ===== 4. 语音交互 ===== -->
+  <include file="$(find upros_chat)/launch/word_to_speech.launch" />
+
+  <!-- ===== 5. 任务执行（高速导航至目标点） ===== -->
+  <!-- <include file="$(find chapt08_pkg)/launch/fucking_run.launch" /> -->
+
+</launch>

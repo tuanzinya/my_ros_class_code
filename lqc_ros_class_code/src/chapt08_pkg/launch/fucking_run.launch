@@ -1,0 +1,7 @@
+<launch>
+  <!-- 将 TEB 局部规划器速度提升 1.5 倍 -->
+  <rosparam file="$(find chapt08_pkg)/config/teb_speed_1_5x.yaml" command="load" ns="move_base/TebLocalPlannerROS" />
+
+  <!-- 运行目标发送节点 -->
+  <node name="send_goal_node" pkg="chapt08_pkg" type="fucking_run_node" output="screen" />
+</launch>
