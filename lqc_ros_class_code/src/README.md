@@ -96,6 +96,5 @@ rosrun chapt07_pkg tag_grab_node
 # 期末考核
 
 ## 依次启动：
-
 roslaunch chapt08_pkg task_all.launch <br>
 roslaunch chapt08_pkg fucking_run.launch
